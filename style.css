@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root{
+    --background_body: #0D1A2D ;
+    --background_box: #15273F ;
+    --text_clr: #F5F9FD;
+    --parag_clr: #6D829E;
+    --nmbr_clr: #159AA3;
+}
+body{
+    background: var(--background_body);
+}
+section{
+    background: var(--background_box);
+    width: 30em;
+    height: 46em;
+    margin: 3em auto;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #0C1729;
+    padding-top: 1em;
+}
+section .image_box{
+    width: 27em; 
+    height: 23em;
+    margin: 0em auto;
+    position: relative;
+    cursor: pointer;
+}
+section .image_box::before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 27em;
+    height: 23em;
+    z-index: 11111;
+    background: url(images/icon-view.svg);
+    background-position: center;
+    background-size: 80px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all .5s .1s;
+}
+section .image_box::after{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 27em;
+    height: 23em;
+    z-index: 1111;
+    background-color: #159AA3;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all .5s;
+}
+.image_box:hover::after{
+    opacity: .7;
+}
+.image_box:hover::before{
+    opacity: 1;
+}
+
+section .image_box img{
+    width: 27em; 
+    height: 23em;
+    border-radius: 10px; 
+}
+.container{
+    width: calc(100% - 4em);
+    margin: 2em auto;
+}
+.container h1{
+    color: var(--text_clr);
+    padding: .5em 0;
+    font-size: 2rem;
+    transition: all .25s;
+    cursor: pointer;
+}
+.container h1:hover{
+    color: var(--nmbr_clr);
+}
+.container .text , .nmbr_2{
+    color: var(--parag_clr);
+}
+.container .text{
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+.container .nmbr_1{
+    color: var(--nmbr_clr);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.container .nmbr_1 img{
+    padding-right: .3em;   
+}
+.container .nmbr_2{
+    float: right;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.container .nmbr_2 img{
+    padding-right: .5em;  
+    width: 1.5em;
+    height: 1.2em; 
+}
+
+
+
+
+
+
+
+
+.creation{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    border-top: 1px solid #2F4159;
+    padding: 1em 0 0 2em;
+}
+.creation img{
+    width: 3em;
+    height: 3em;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+.creation .inner{
+    color: var(--parag_clr) ;
+    font-size: 1.3rem;
+    word-spacing: .2em;
+}
+.creation .inner span{
+    color: var(--text_clr);
+    padding-left: .5em;
+    transition: all .25s;
+    cursor: pointer;
+}
+.creation .inner span:hover{
+    color: var(--nmbr_clr);
+}
